@@ -63,12 +63,12 @@ export default function Dashboard() {
 
       {/* Recent Tasks Section */}
       <div className="mt-10 bg-white dark: bg-gradient-to-b from-pink-600 via-pink-700 to-fuchsia-700 shadow-xl rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-700 dark:text-white">
+        <h2 className="text-2xl font-semibold mb-4 text-white ">
           Recent Tasks
         </h2>
 
         {recent.length === 0 ? (
-          <p className="text-sm text-gray-500 dark:text-white italic">
+          <p className="text-sm text-white italic">
             No tasks yet. Create your first task to get started.
           </p>
         ) : (

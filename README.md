@@ -1,73 +1,140 @@
-# React + TypeScript + Vite
+# Personal Productivity Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Frontend Assignment – Anshika Ojha**
 
-Currently, two official plugins are available:
+A modern, responsive personal productivity dashboard built using  **TypeScript**, **React**, and **Tailwind CSS**.  
+The application helps users manage daily tasks, track progress, and stay organized with a clean and intuitive UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Tech Stack
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **LocalStorage** (for persistence)
+- **GitHub** (version control)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Objective
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To build a multi-feature productivity dashboard that demonstrates:
+- Strong React fundamentals
+- Component-based architecture
+- Effective state management
+- TypeScript usage
+- Clean and consistent UI design
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 1️⃣ Task Management
+Each task includes:
+- Title
+- Description
+- Priority (Low / Medium / High)
+- Status (Pending / Completed)
+- Due Date
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Task Actions**
+- Create tasks
+- Delete tasks
+- Mark tasks as completed
+- Filter by status and priority
+- Sort tasks by due date
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 2️⃣ Task Statistics
+- Total tasks
+- Completed tasks
+- Pending tasks
+- Progress indicator (percentage)
+
+---
+
+### 3️⃣ Data Persistence
+- Tasks are stored in **localStorage**
+- Data persists after page refresh
+
+---
+
+## 📄 Pages & Routes
+
+| Route | Description |
+|-----|------------|
+| `/` | Dashboard (stats + recent tasks) |
+| `/tasks` | Full task list with filters & sorting |
+| `/tasks/new` | Add new task |
+
+---
+
+## 🧩 Reusable Components
+
+- `TaskForm` – Create & edit tasks
+- `TaskCard` – Display individual task details
+- `StatsCard` – Display task statistics
+- `Navbar` – Application navigation
+
+---
+
+## 🛠️ Technical Highlights
+
+- Fully typed **TypeScript interfaces** for all data models
+- Reusable, modular components
+- Local state management using React hooks
+- Basic form validation
+- Responsive design (mobile-first)
+- Clean and consistent UI across all pages
+
+---
+
+## 🌙 Bonus Features (Optional)
+- Subtle hover
+- Empty states for better UX
+
+---
+
+
+## 📸 Screenshots
+
+### 🏠 Dashboard
+Displays task statistics, progress overview, and recent tasks in a clean, card-based layout.
+
+![Dashboard Screenshot](./screenshots/Dashboard.png)
+
+---
+
+### 📋 Tasks Page
+View all tasks with filtering by status & priority and sorting by due date.
+
+![Tasks Page Screenshot](./screenshots/Tasks.png)
+
+---
+
+### ➕ Add New Task
+Create a new task using a structured form with validation and clear UI.
+
+![Add Task Screenshot](./screenshots/Add_tasks.png)
+
+
+
+---
+
+## 📦 Installation & Setup
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to the project directory
+cd Personal
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+
+
