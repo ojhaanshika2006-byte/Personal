@@ -1,4 +1,3 @@
-// src/components/StatsCard/StatsCard.tsx
 type Props = {
   label: string;
   value: number | string;
@@ -14,7 +13,7 @@ export default function StatsCard({ label, value, accent = 'blue' }: Props) {
   } as const;
 
   return (
-    <div className={`border rounded p-4 bg-white dark:bg-gray-800`}>
+    <div className={`border  p-4 bg-white rounded-xl shadow p-6">`}>
       <div className={`inline-block text-xs px-2 py-1 rounded ${map[accent]}`}>{label}</div>
       <div className="mt-2 text-2xl font-bold">{value}</div>
     </div>

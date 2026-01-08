@@ -1,4 +1,3 @@
-// src/components/TaskForm/TaskForm.tsx
 import { useState } from 'react';
 import type { Priority, Status, Task } from '../types/task';
 
@@ -98,3 +97,4 @@ export default function TaskForm({ initial = {}, onSubmit }: Props) {
     </form>
   );
 }
+
