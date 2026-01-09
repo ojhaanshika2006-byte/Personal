@@ -1,6 +1,6 @@
 type Props = {
   label: string;
-  value: number | string;
+  value: number;
   accent?: 'blue' | 'green' | 'yellow' | 'red';
 };
 

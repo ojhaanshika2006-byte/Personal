@@ -42,7 +42,7 @@ export default function TaskCard({
         </span>
         <span
           className={`px-2 py-1 rounded ${
-            isOverdue ? "bg-red-200" : "bg-gray-200"
+            isOverdue ? "bg-red-900 text-white" : "bg-gray-200"
           }`}
         >
           Due: {new Date(task.dueDate).toLocaleDateString()}
@@ -63,7 +63,7 @@ export default function TaskCard({
           onClick={() => onDelete(task.id)}
           className="bg-red-600 text-white px-3 py-1 rounded"
         >
-          Delete
+          Delete task
         </button>
       </div>
     </div>

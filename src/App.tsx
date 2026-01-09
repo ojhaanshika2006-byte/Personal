@@ -8,10 +8,10 @@ import './index.css'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100 transition-colors duration-300">
+    <div className="min-h-screen bg-gray-200">
     <BrowserRouter>
       <Navbar/>
-            <Routes>
+      <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/tasks" element={<TasksList />} />
         <Route path="/tasks/new" element={<TaskNew />} />
@@ -20,4 +20,3 @@ export default function App() {
      </div>
   );
 }
-

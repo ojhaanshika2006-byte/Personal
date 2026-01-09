@@ -14,12 +14,31 @@ export default function TaskForm({ initial = {}, onSubmit }: Props) {
   const [dueDate, setDueDate] = useState(initial.dueDate ?? '');
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  // const validate = () => {
+  //   const e: Record<string, string> = {};
+  //   if (!title.trim()) e.title = 'Title is required';
+  //   if (!dueDate) e.dueDate = 'Due date is required';
+  //   return e;
+  // };
   const validate = () => {
-    const e: Record<string, string> = {};
-    if (!title.trim()) e.title = 'Title is required';
-    if (!dueDate) e.dueDate = 'Due date is required';
-    return e;
-  };
+  const e: Record<string, string> = {};
+
+  if (!title.trim()) e.title = 'Title is required';
+  if (!dueDate) {
+    e.dueDate = 'Due date is required';
+  } else {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const selectedDate = new Date(dueDate);
+
+    if (selectedDate < today) {
+      e.dueDate = 'Due date cannot be in the past';
+    }
+  }
+  return e;
+};
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,7 +57,7 @@ export default function TaskForm({ initial = {}, onSubmit }: Props) {
           className="mt-1 w-full border rounded px-3 py-2"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="e.g., Finish React assignment"
+          placeholder="e.g., Complete assignment"
         />
         {errors.title && <p className="text-red-600 text-sm">{errors.title}</p>}
       </div>
@@ -81,6 +100,7 @@ export default function TaskForm({ initial = {}, onSubmit }: Props) {
 
         <div>
           <label className="block text-sm font-medium">Due date</label>
+          
           <input
             type="date"
             className="mt-1 w-full border rounded px-3 py-2"
@@ -91,7 +111,7 @@ export default function TaskForm({ initial = {}, onSubmit }: Props) {
         </div>
       </div>
 
-      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+      <button className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-800 transition">
         Save task
       </button>
     </form>
