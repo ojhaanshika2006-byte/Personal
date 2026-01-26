@@ -31,7 +31,7 @@ export function useTasks() {
   };
 
   const markCompleted = (id: string) => updateTask(id, { status: 'Completed' });
-
+  
   const stats = useMemo(() => {
     const total = tasks.length;
     const completed = tasks.filter((t) => t.status === 'Completed').length;

@@ -6,6 +6,7 @@ import TaskNew from './pages/TaskNew';
 import Navbar from './components/Navbar';
 import './index.css'
 import Notfound from './pages/Notfound';
+import EditTask from './pages/EditTask'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/tasks" element={<TasksList />} />
         <Route path="/tasks/new" element={<TaskNew />} />
         <Route path='*' element={<Notfound/>} />
+        <Route path="/tasks/edit/:id" element={<EditTask />} />
       </Routes>
     </BrowserRouter>
      </div>

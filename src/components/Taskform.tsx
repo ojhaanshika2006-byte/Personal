@@ -13,13 +13,7 @@ export default function TaskForm({ initial = {}, onSubmit }: Props) {
   const [status, setStatus] = useState<Status>(initial.status ?? 'Pending');
   const [dueDate, setDueDate] = useState(initial.dueDate ?? '');
   const [errors, setErrors] = useState<Record<string, string>>({});
-
-  // const validate = () => {
-  //   const e: Record<string, string> = {};
-  //   if (!title.trim()) e.title = 'Title is required';
-  //   if (!dueDate) e.dueDate = 'Due date is required';
-  //   return e;
-  // };
+  
   const validate = () => {
   const e: Record<string, string> = {};
 

@@ -1,4 +1,5 @@
 import type { Task } from "../types/task";
+import { Link } from "react-router-dom";
 
 type Props = {
   task: Task;
@@ -65,7 +66,20 @@ export default function TaskCard({
         >
           Delete task
         </button>
+
+          <Link
+         to={`/tasks/edit/${task.id}`}
+         className="bg-amber-300 text-white px-3 py-1 rounded"
+        >
+        Edit
+        </Link>
       </div>
+      {/* <div>  <Link
+         to={`/tasks/edit/${task.id}`}
+         className="bg-amber-300 text-white px-3 py-1 rounded"
+        >
+        Edit
+        </Link></div> */}
     </div>
   );
 }
